@@ -1,0 +1,50 @@
+/**{
+    padding: 5px;
+}*/
+
+body{
+    background-color: azure;
+}
+
+span{
+    padding: 0;
+    margin: 15px;
+    background-color: orange;
+    width: 150px;
+    height: 50px;
+}
+
+div{
+    padding: 0;
+    margin: 15px;
+    background-color: darkgoldenrod;
+    /* width: 600px;
+    height: 50px; */
+    min-width: 150px;
+    min-height: 200px;
+    max-width: 600px;
+    max-height: 200px;
+}
+
+article{
+    padding: 0;
+    margin: 15px;
+    background-color: lightsalmon;
+    width: 80%;
+    height: 50%;
+}
+
+p{
+    text-align: center;
+    text-decoration-line: underline;
+    text-decoration-color: green;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 30%;
+    letter-spacing: 15px;
+    /* letter-spacing: -2px; */
+
+}
+
+img{
+    float: left;
+}
