@@ -1,0 +1,31 @@
+body{
+    background-color: azure;
+    background-image: url(../img/chocolate1.jpg);
+    background-size: cover;
+}
+div{
+    padding: 0px 25px 0px 0px;
+    margin: 15px;
+    background-color: pink;
+    width: 25%;
+    height: 200px;
+    min-width: 200px;
+    border: 1px solid black;
+}
+
+p{
+    text-align: center;
+    font-size: larger;
+    text-decoration-line:underline;
+    text-decoration-color: green;
+    text-decoration-style:solid;
+    text-decoration-thickness: 25%;
+    letter-spacing: 3px;
+}
+
+img{
+    float: left;
+    margin-right: 25px;
+    width: 150px;
+    height: 200px;
+}
