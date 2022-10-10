@@ -20,6 +20,8 @@ main header.main-header {
     background-color: #f7f7f7;
     padding: 20px 40px;
     margin-bottom: 60px;
+    border-bottom: 5px solid #1098ad;
+
 }
 
 nav {
@@ -36,9 +38,9 @@ header.post-header {
 
 aside {
     background-color: #f7f7f7;
-    border-top: 5px solid #1098ad;
+    border-top: 10px solid #1098ad;
     border-bottom: 5px solid #1098ad;
-    padding: 50px 0;
+    /*padding: 0px 0 20px;*/
     width: 800px;
 }
 
@@ -86,8 +88,15 @@ ul,
 ol {
     margin-left: 50px;
     margin-bottom: 20px;
-    list-style-type: none;
+    list-style: none;
 }
+
+/* ul li::before{
+    content: "\2022";
+    font-size: 36px;
+    color: green;
+} */
+
 
 li {
     font-size: 20px;
