@@ -1,0 +1,154 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    color: #444;
+    font-family: sans-serif;
+    border-top: 10px solid #1098ad;
+    position: relative;
+}
+
+main.container {
+    width: 800px;
+    /* Centruoja konteineri */
+    margin: 0 auto;
+}
+
+main header.main-header {
+    background-color: #f7f7f7;
+    padding: 20px 40px;
+    margin-bottom: 60px;
+}
+
+nav {
+    font-size: 18px;
+}
+
+article {
+    margin-bottom: 60px;
+}
+
+header.post-header {
+    margin-bottom: 12px;
+}
+
+aside {
+    background-color: #f7f7f7;
+    border-top: 5px solid #1098ad;
+    border-bottom: 5px solid #1098ad;
+    padding: 50px 0;
+    width: 800px;
+}
+
+hr{
+    margin-bottom: 15px;
+}
+
+h1,
+h2,
+h3 {
+    color: #1098ad;
+}
+
+h1 {
+    font-size: 26px;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+h2 {
+    font-size: 40px;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+h3 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+h4 {
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+p {
+    font-size: 22px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+ul,
+ol {
+    margin-left: 50px;
+    margin-bottom: 20px;
+    list-style-type: none;
+}
+
+li {
+    font-size: 20px;
+    margin-bottom: 10px;
+} 
+
+/* li:last-child {
+    margin-bottom: 0px;
+} */
+
+#author {
+    font-style: italic;
+    font-size: 18px;
+}
+
+#copyright {
+    font-size: 8px;
+}
+
+/* li:first-child {
+    font-weight: bold;
+}
+
+li:last-child {
+    font-style: italic;
+}
+
+li:nth-child(even) {
+    color:darkslategrey;
+} */
+
+article p:first-child {
+    color: red;
+}
+
+a:link {
+    color:#1098ad;
+    text-decoration: none;
+}
+
+a:visited {
+    color:#1098ad;
+}
+
+a:hover {
+    color: orangered;
+    font-weight: bold;
+    text-decoration: underline orangered;
+}
+
+a:active {
+    background-color: black;
+    font-style: italic;
+}
+
+nav a:link {
+    margin-right: 30px;
+    margin-top: 20px;
+}
+
+/* h1::first-letter {
+    font-style: normal;
+    color:black;
+} */
