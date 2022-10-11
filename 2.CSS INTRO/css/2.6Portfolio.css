@@ -88,7 +88,7 @@ ul,
 ol {
     margin-left: 50px;
     margin-bottom: 20px;
-    list-style: none;
+    font-size: 20px;
 }
 
 /* ul li::before{
@@ -99,8 +99,7 @@ ol {
 
 
 li {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 18px;
 } 
 
 /* li:last-child {
