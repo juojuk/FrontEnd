@@ -1,0 +1,12 @@
+.container-flex-flow{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.container-flex-flow div{
+    border: 1px solid orange;
+    background-color: darkgray;
+    width: 200px;
+    height: 100px;
+    margin: 1em;
+}

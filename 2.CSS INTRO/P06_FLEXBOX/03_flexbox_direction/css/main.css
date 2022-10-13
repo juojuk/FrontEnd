@@ -1,0 +1,111 @@
+.container-row{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;/*by default*/
+}
+
+.container-row div{
+    width: 175px;
+    height: 100px;
+    border: 1px solid red;
+    background-color: darkgray;
+    text-align: center;
+    margin: 1em;
+}
+
+.container-row-reverse{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+}
+
+.container-row-reverse div{
+    width: 175px;
+    height: 100px;
+    border: 1px solid red;
+    background-color: darkgray;
+    text-align: center;
+    margin: 1em;
+}
+
+.container-column{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;/*by default*/
+}
+
+.container-column div{
+    width: 175px;
+    height: 100px;
+    border: 1px solid red;
+    background-color: darkgray;
+    text-align: center;
+    margin: 1em;
+    word-wrap: break-word;
+}
+.container-column-reverse{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;/*by default*/
+}
+
+.container-column-reverse div{
+    width: 175px;
+    height: 100px;
+    border: 1px solid red;
+    background-color: darkgray;
+    text-align: center;
+    margin: 1em;
+    word-wrap: break-word;
+}
+
+.container-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;/*by default*/
+}
+
+.container-wrap div{
+    width: 175px;
+    height: 100px;
+    border: 1px solid red;
+    background-color: darkgray;
+    text-align: center;
+    margin: 1em;
+    word-wrap: break-word;
+}
+
+.container-nowrap{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;/*by default*/
+}
+
+.container-nowrap div{
+    width: 175px;
+    height: 100px;
+    border: 1px solid red;
+    background-color: darkgray;
+    text-align: center;
+    margin: 1em;
+    word-wrap: break-word;
+}
+
+.container-wrap-reverse{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;/*by default*/
+}
+
+.container-wrap-reverse div{
+    width: 175px;
+    height: 100px;
+    border: 1px solid red;
+    background-color: darkgray;
+    text-align: center;
+    margin: 1em;
+    word-wrap: break-word;
+}
+
+
+

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="m">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container-row{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;/*by default*/
+}
+
+.container-row div{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    text-align: center;
+    margin: 1px;
+}
+
+.container-row-reverse{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+}
+
+.container-row-reverse div{
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+    text-align: center;
+    margin: 1px;
+}
+
+.container-column{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;/*by default*/
+}
+
+.container-column div{
+    width: 50px;
+    height: 50px;
+    background-color: aqua;
+    text-align: center;
+    margin: 1px;
+}
+.container-column-reverse{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;/*by default*/
+}
+
+.container-column-reverse div{
+    width: 50px;
+    height: 50px;
+    background-color: #008000;
+    text-align: center;
+    margin: 1px;
+}
+
+</style>
+<body style="width: 260px; background-color: black; color: white ;">
+        <!--div.container-row>div{$}*5-->
+        <div class="container-row">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+        <!--div.container-row-reverse>div{$}*5-->
+        <div class="container-row-reverse">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+        <!--div.container-column>div{$}*5-->
+        <div class="container-column">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+        <!--div.container-column-reverse>div{$}*5-->
+        <div class="container-column-reverse">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+</body>
+</html>

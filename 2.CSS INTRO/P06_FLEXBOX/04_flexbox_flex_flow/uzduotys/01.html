@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.container-nowrap{
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: nowrap; */
+}
+
+.container-nowrap div{
+    width: 70px;
+    height: 70px;
+    background-color: red;
+    text-align: center;
+    margin: 1px;
+    flex: 1;
+}
+
+.container-wrap{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.container-wrap div{
+    min-width: 70px;
+    max-width: 70px;
+    min-height: 70px;
+    background-color: yellow;
+    text-align: center;
+    margin: 1px;
+    flex: 1;
+
+}
+
+
+.container-wrap-reverse{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+}
+
+.container-wrap-reverse div{
+    max-width: 70px;
+    min-width: 70px;
+    min-height: 70px;
+    background-color: aqua;
+    text-align: center;
+    margin: 1px;
+    flex: 1;
+}
+</style>
+<body>
+    <!--div.container-nowrap>div{$}*8-->
+    <div class="container-nowrap">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+    <hr>
+    <!--div.container-wrap>div{$}*8-->
+    <div class="container-wrap">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+    <hr>
+    <!--div.container-wrap-reverse>div{$}*8-->
+    <div class="container-wrap-reverse">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+
+
+</body>
+</html>
