@@ -11,10 +11,10 @@
     <h1>Hello HTML DOM elements</h1>
     <h2>getElementsByTagName</h2>
     <ul>
-        <li>Kava</li>
-        <li>Arbata</li>
-        <li>Vanduo</li>
-        <li>Pienas</li>
+        <li class = "drink coffee">Kava</li>
+        <li class = "drink tea">Arbata</li>
+        <li class = "drink water">Vanduo</li>
+        <li class = "drink milk">Pienas</li>
     </ul>
     <p>
         <button type = "button" onclick="changeFirstLi()">Modifikuoti Kava</button>
@@ -26,6 +26,20 @@
         <button type = "button" onclick="document.getElementById('lbl_li_count').innerHTML = countLi()">Suskaičiuoti li</button>
     </p>
     <div id="lbl_li_count">not counted</div>
+    <p>
+        <button type = "button" onclick="changeCoffee()">Pakeisti kava i karsta soskolada</button>
+    </p>
+    <p>
+        <button type = "button" onclick="changeMilkToAlmindDrink()">Pakeisti pieną i migdolini gerima</button>
+    </p>
+    <p>
+        <button type = "button" onclick="changeStyleOfWater()">Pakeisti vandens spalva i melyna</button>
+    </p>
+    <p>
+        <button type = "button" onclick="changeStyleOfMilk()">Pagrazinti piena</button>
+    </p>
+
+
     <!-- REGION SCRIPTS -->
     <script src="_script.js"></script>
 </body>
