@@ -1,0 +1,84 @@
+.container
+{
+    display: block;
+    height: auto;
+    border: 2px  black;
+    padding: 20mm 0mm 20mm 0mm;
+
+}
+.container-blocks
+{
+    display:inline-block;
+    height: auto;
+    width: 450px;
+    margin-left: 5mm;
+    margin-right: 5mm;
+    border: 1px  black;
+    vertical-align: top;
+}
+
+.recipe
+{
+    display: block;
+    height: auto;
+    margin-left: 5mm;
+    margin-right: 5mm;
+}
+
+.ingredients
+{
+    display: block;
+    height: auto;
+    width: 450px;
+    margin-left: 5mm;
+    margin-right: 5mm;
+    border: 1px  black;
+}
+.alergens
+{
+    display: flex;
+    height: auto;
+    width: 450px;
+    margin-top: 10mm;
+    margin-left: 5mm;
+    margin-right: 5mm;
+    border: 1px  black;
+}
+
+.tools
+{
+    display: block;
+    height: auto;
+    width: 50px;
+    margin-top: 10mm;
+    margin-left: 5mm;
+    margin-right: 5mm;
+    border: 1px  black;
+}
+
+.img-block
+{
+    display: block;
+    height:fit-content;
+    margin-left: 5mm;
+    margin-right: 5mm;
+    border: 1px  black;
+}
+
+
+img 
+{
+    max-width: 100%;
+    max-height: auto;
+}
+
+h1{
+    text-align: center;
+}
+
+h3
+{
+    padding-top: 5px;
+    text-align: left;
+    margin: 0px;
+}

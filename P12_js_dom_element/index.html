@@ -12,7 +12,12 @@
     <h2>getElementsByTagName</h2>
     <ul>
         <li class = "drink coffee">Kava</li>
-        <li class = "drink tea">Arbata</li>
+        <li class = "drink tea">Arbata
+            <ul id = "tea_types">
+                <li>Juoda arbata</li>
+                <li>Žalia arbata</li>
+            </ul>
+        </li>
         <li class = "drink water">Vanduo</li>
         <li class = "drink milk">Pienas</li>
     </ul>
@@ -38,6 +43,10 @@
     <p>
         <button type = "button" onclick="changeStyleOfMilk()">Pagrazinti piena</button>
     </p>
+    <p>
+        <button type = "button" onclick="changeStyleOfTea()">Pagrazinti arbata</button>
+    </p>
+
 
 
     <!-- REGION SCRIPTS -->

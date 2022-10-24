@@ -44,3 +44,26 @@ function changeStyleOfMilk(){
         }
     }
 }
+
+function changeStyleOfTea(){
+    const ul_of_tea_types = document.querySelector('#tea_types');
+    const list_of_tea_type_li = ul_of_tea_types.children;
+    const list_of_tea = ul_of_tea_types.parentElement;
+    if (!list_of_tea.classList.contains("pretty_tea")){
+        list_of_tea.classList.add("pretty_tea");
+    }
+    for( const li of list_of_tea_type_li){
+        li.style.margin ='5px';
+        li.style.padding = '10px';
+        switch (li.innerHTML){
+            case 'Juoda arbata':
+                li.style.backgroundColor = '#923c01';
+                break;
+            case 'Žalia arbata':
+                if(!li.classList.contains("pretty_green_tea")){
+                    li.classList.add('pretty_green_tea');
+                }
+                break;
+        }
+    }
+}
