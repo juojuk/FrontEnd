@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM ELEMENTS</title>
+    <link rel="stylesheet" href="_styles.css">
+</head>
+<body>
+    <h1>Hello HTML DOM elements</h1>
+    <h2>getElementsByTagName</h2>
+    <ul>
+        <li>Kava</li>
+        <li>Arbata</li>
+        <li>Vanduo</li>
+        <li>Pienas</li>
+    </ul>
+    <p>
+        <button type = "button" onclick="changeFirstLi()">Modifikuoti Kava</button>
+    </p>
+    <p>
+        <button type = "button" onclick="addMilkLi()">Pridėti pieno</button>
+    </p>
+    <p>
+        <button type = "button" onclick="document.getElementById('lbl_li_count').innerHTML = countLi()">Suskaičiuoti li</button>
+    </p>
+    <div id="lbl_li_count">not counted</div>
+    <!-- REGION SCRIPTS -->
+    <script src="_script.js"></script>
+</body>
+</html>
