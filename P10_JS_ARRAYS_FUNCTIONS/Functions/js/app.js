@@ -390,3 +390,23 @@ console.log(isChild(19));
 
 const isInNineties = makeBetweenFunc(1990, 2000);
 const isGoodWeather = makeBetweenFunc(20, 30);
+
+
+
+// ARROW FUNCTIONS
+
+let greetArrow = () => {
+    console.log("Hello using arrow!");
+}
+
+greetArrow();
+
+let greetArrowName = (name) => {
+    console.log(`Hello ${name} using arrow!`);
+}
+
+greetArrowName("Edvinas");
+
+let sumArrow = (a, b) => a + b;
+
+console.log(sumArrow(8,8));

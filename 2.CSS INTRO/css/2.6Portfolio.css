@@ -91,6 +91,7 @@ ol {
     margin-left: 50px;
     margin-bottom: 20px;
     font-size: 20px;
+    list-style-type: none;
 }
 
 /* ul li::before{
@@ -101,12 +102,20 @@ ol {
 
 
 li {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    align-self: flex-start;
+    /* formatting */
+    /*height: 50px;*/
     font-size: 18px;
 }
 
-/* li:last-child {
-    margin-bottom: 0px;
-} */
+img {
+    height: auto;
+    width: 50px;
+    margin-right: 10px;
+}
 
 #author {
     font-style: italic;
