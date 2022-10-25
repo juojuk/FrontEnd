@@ -42,6 +42,41 @@
       <label for="fld_lastname">Iveskite savo pavarde</label>
       <input type="text" id="fld_lastname" />
     </p>
+    <!-- ----------------- -->
+    <p>
+      <label for="fld_age">Iveskite savo amziu</label>
+      <input type="text" id="fld_age" />
+    </p>
+    <!-- ----------------- -->
+    <p>
+      <label for="fld_number">Iveskite skaiciu</label>
+      <input type="text" id="fld_number" />
+    </p>
+    <p id="lbl_number">as nezinau skaiciaus</p>
+
+    <!-- ----------------- -->
+    <h2>form</h2>
+    <form id="frm_registration" method="post">
+      <div>
+        <label for="name">Vardas:</label>
+        <input type="text" id="name" name="user_name" value="Vardenis" />
+      </div>
+      <div>
+        <label for="mail">E-mail:</label>
+        <input
+          type="email"
+          id="mail"
+          name="user_mail"
+          value="Vardenis@pavardenis.tk"
+        />
+      </div>
+      <div>
+        <label for="msg">Zinute:</label>
+        <textarea id="msg" name="user_msg"></textarea>
+      </div>
+      <button type="submit">Registruotis</button>
+    </form>
+
     <!-- REGION for scripts -->
     <script src="_script.js"></script>
   </body>

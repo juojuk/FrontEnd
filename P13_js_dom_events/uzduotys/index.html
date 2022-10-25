@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="_styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class ="container-blocks">
+            <div class = "card">
+                <p id="lbl_cardNum">**** **** **** ****</p>
+                <p id="lbl_cardHolder">FULL NAME</p>
+            </div>
+        </div>
+        <div class ="container-blocks">
+            <div class = "forma">
+                <form id="frm_registration" method="post">
+                <div>
+                    <p><label for="fld_cardNum">Card Number</label></p>
+                    <p><input type="text" id="fld_cardNum" name="card_number" value="" /></p>
+                </div>
+                <div>
+                    <p><label for="fld_cardHolder">Cardholder name</label></p>
+                    <p><input type="text" id="fld_cardHolder" name="card_holder" value=""/></p>
+                </div>
+                <div>
+                    <p><label for="fld_expDate">Expiry date</label></p>
+                    <p><input type="text" id="fld_expDate" name="exp_date" value="MM/YYYY"/></p>
+                </div>
+                <div>
+                    <p><label for="fld_securityNum">Security Number</label></p>
+                    <p><input type="text" id="fld_securityNum" name="security_num" value="CVC"/></p>
+                </div>
+                <div>
+                    <button type="submit">Pay</button>
+                </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <!-- REGION for scripts -->
+    <script src="_script.js"></script>
+</body>
+</html>
