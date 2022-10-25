@@ -94,27 +94,24 @@ ol {
     list-style-type: none;
 }
 
-/* ul li::before{
+ ol li::before{
     content: "\2022";
     font-size: 36px;
     color: green;
-} */
+} 
 
 
 li {
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
-    align-self: flex-start;
-    /* formatting */
-    /*height: 50px;*/
+    align-items:center;
+    height: 50px;
     font-size: 18px;
 }
 
 img {
-    height: auto;
+    max-height: 50px;
     width: 50px;
-    margin-right: 10px;
 }
 
 #author {
@@ -123,7 +120,7 @@ img {
 }
 
 #copyright {
-    font-size: 8px;
+    font-size: 10px;
 }
 
 /* li:first-child {
@@ -140,6 +137,10 @@ li:nth-child(even) {
 
 article p:first-child {
     color: green;
+}
+
+a{
+    margin-right: 10px;
 }
 
 a:link {
