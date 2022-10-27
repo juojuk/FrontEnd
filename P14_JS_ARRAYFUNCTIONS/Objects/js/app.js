@@ -194,3 +194,19 @@ for(let propValue of movieRatings){
 
 console.log(totalRating);
 console.log(totalRating/movieRatings.length);
+
+//CALLBACKS
+//A callback is a function passed to another function as an argument to parameter 
+//which is invoked in our outer function.
+
+function MessageUserAboutClick(){
+    alert('Wow, a button was clicked!')
+}
+
+let btnRunFunction = document.querySelector('button');
+btnRunFunction.addEventListener('click', MessageUserAboutClick);
+btnRunFunction.addEventListener('click', function() {// Annon function is callback
+    console.log('Ohh wow, a function in REPL');
+    setTimeout(MessageUserAboutClick, 3000);
+});
+

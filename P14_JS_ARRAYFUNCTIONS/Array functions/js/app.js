@@ -334,3 +334,80 @@ const animalPairs = [
 animalPairs[0][1] = 'stag';
 console.log(animalPairs[1][1][1]);
 console.log(animalPairs[1][1].indexOf('stag'));
+
+// .FOREACH
+// .forEach is a syntax sugar to help avoid using keyword function through our whole application. It is quite a bit slower than forOf.
+const numbers2 = [20,21,22,23,24,25,26,27];
+numbers2.forEach(function(num) {
+    console.log(num * 2);
+});
+
+numbers2.forEach(num => console.log(num * 2));
+
+function printTriple(n) {
+    console.log(n * 3);
+}
+
+numbers2.forEach(printTriple);
+
+// MAP()
+// Creates a new array based on our callback function
+const doubles = numbers2.map(function(elementOfNumbers2) { //elementOfNumbers2 is an element of numbers2
+    return elementOfNumbers2 * 2;
+});
+
+console.log(numbers2);
+console.log(doubles);
+
+const numDetail = numbers2.map(function(n) { // n is just a name for our element
+    return {
+        value: n,
+        isEven: n % 2 === 0
+    };
+})
+
+const fakeNumDetails = numbers2.map(function() {
+    return {
+        value: 10,
+        isEven: 10 % 2 === 0
+    };
+})
+
+console.log(numDetail);
+console.log(fakeNumDetails);
+
+// FILTER()
+// Creates an array with all elements which pass callback test/function
+// Main thing to remember is that your function HAS to return boolean
+const filteredOddNumbersNA = numbers2.filter(function(n) { 
+    return n % 2 === 1
+});
+const filteredOddNumbers = numbers2.filter(n => n % 2 === 1);
+const filteredEvenNumbers = numbers2.filter(n => n % 2 === 0);
+
+console.log(filteredOddNumbersNA);
+console.log(filteredOddNumbers);
+console.log(filteredEvenNumbers);
+
+// SOME() AND EVERY()
+// EVERY returns a boolean 
+const words2 = [
+    "dog",
+    "dig",
+    "log",
+    "bag",
+    "wag",
+];
+
+const all3Letters = words2.every(word => word.length === 3);
+const allEndInG = words2.every(word => {
+    const last = word.length-1;
+    return word[last] === 'g';
+});
+
+console.log(all3Letters);
+console.log(allEndInG);
+
+const someStartWithD = words2.some(word => word[0] === 'd');
+console.log(someStartWithD);
+
