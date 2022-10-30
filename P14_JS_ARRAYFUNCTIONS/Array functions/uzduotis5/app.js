@@ -7,3 +7,5 @@ function addParagraphToDiv(){
          d.innerHTML += number;
      });
 }
+
+addParagraphToDiv()
