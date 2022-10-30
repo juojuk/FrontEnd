@@ -45,3 +45,26 @@ const budgets = [
       budget: 7,
     },
   ];
+
+  function sumBudgets (budgets){
+    let totalBudget = 0;
+    for (let item of budgets){
+      totalBudget += item.budget;
+    }
+    console.log(totalBudget);
+  }
+
+  // 4
+  sumBudgets(budgets)
+
+  function namesOfBudgets(budgets){
+    const arrOfNames = budgets.map(function (e){
+      return e.name;
+    }
+    )
+    console.log(arrOfNames);
+  }
+
+  namesOfBudgets(budgets)
+
+
