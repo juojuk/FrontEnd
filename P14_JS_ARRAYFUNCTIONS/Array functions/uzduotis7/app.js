@@ -49,3 +49,9 @@ isPersonInArray ()
 
 // 2
 
+function arrCountTwos(numbers){
+  const arrOfTwos = numbers.filter(twos => twos === 2)
+  return console.log(arrOfTwos.length);
+}
+
+arrCountTwos(numbers);
