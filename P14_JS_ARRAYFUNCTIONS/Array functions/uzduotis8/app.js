@@ -57,4 +57,22 @@ function symbolified(budgets){
       console.log(newNames);
     };
   };
-symbolified(budgets);
+
+  symbolified(budgets);
+
+  // 3 Edvino
+  function symbolified(arr){
+    if(arr.every(n => n.length >= 3)){
+      if(arr.some(symbolifiedCondition)){
+        let newArr = arr.filter(symbolifiedCondition);
+        return newArr.map(function(ele){
+          return ele.replace('a','@');
+        });
+      }
+    }
+  }
+  function symbolifiedCondition(word){
+    return word.includes('a');
+  }
+
+console.log(symbolifiedCondition(budgets));

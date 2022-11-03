@@ -9,6 +9,14 @@ function arrDoubled(numbers){
     return console.log(arr);
 };
 
+// 1 Edvino
+function arrDoubled(arr){
+  return arr.map(function(arrEle){
+    // We return value to an array that is STILL in progress of being built
+    return arrEle * 2;
+  });
+}
+
 arrDoubled(numbers);
 
 // 2
@@ -19,6 +27,12 @@ function arrMultiplied(numbers, multiplicator){
     });
     return console.log(arr);
 };
+
+// 2 Edvino
+function arrMultiplied(arr, multiplier){
+  return arr.map(arrEle => arrEle * multiplier);
+}
+
 
 arrMultiplied(numbers, 3);
 
@@ -64,6 +78,21 @@ const budgets = [
     )
     console.log(arrOfNames);
   }
+
+  // 4 Edvino
+  function getBudgetPeople(budgetErr){
+    return budgetErr.map(ele => ele.name);
+  }
+
+  // 4 klasės gražinimas
+  // function getBudgetPeople(budgetErr){
+  //   return budgetErr.map(ele => {
+  //     return {
+  //       name: ele.name
+  //     }
+  //   });
+  // }
+
 
   namesOfBudgets(budgets)
 

@@ -28,9 +28,8 @@ const budgets = [
 
 // 1
 
-function isPersonInArray (){
+function isPersonInArray (budgets, person){
   const arrOfPersons = budgets.map(e => e.name);
-  let person = prompt("Please enter your name");
   if (arrOfPersons.includes(person)){
     switch (person[person.length - 1] === 's') {
       case true:
@@ -45,7 +44,7 @@ function isPersonInArray (){
   }
 }
 
-isPersonInArray ()
+isPersonInArray (budgets, prompt("Please enter your name"))
 
 // 2
 
