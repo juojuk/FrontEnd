@@ -27,37 +27,23 @@
             <p>Required fields are followed by *</p>
             <h2>Contact information</h2>
             <br>
-            <label for="name">Name:*</label>
-            <input type="text" id="name" name="name" required value="" />
-            <br />
+            <label for="firstname">First Name:*</label>
+            <input type="text" id="firstname" name="firstname" required value="">
+            <br>
+            <label for="lastname">Last name:*</label>
+            <input type="text" id="lastname" name="lastname" required value="">
+            <br>
             <label for="email">E-mail:*</label>
-            <input type="email" id="email" name="email" required value="" />
-            <br />
-            <label for="password">Password:*</label>
-            <input type="password" id="password" name="password" required value="" />
+            <input type="email" id="email" name="email" required value="">
             <br>
-            <h2>Payment information</h2>
             <br>
-            <label for="card">Card type:</label>
-            <select id="card" name="card">
-                <option value="visa">Visa</option>
-                <option value="mastercard" selected>Mastercard</option>
-                <option value="americanexpress" selected>American express</option>
-            </select>
-            <br>
-            <label for="cnumber">Card number:*</label>
-            <input type="text" id="cnumber" name="cnumber" required value="" />
-            <br>
-            <label for="exdate">Expiration date:*</label>
-            <input type="date" id="exdate" name="exdate" required value="" />
-            <br>
-            <hr>
-            <div style="text-align: center">
+            <div id="submit-signup">
                 <label for="agree">Agree with terms and conditions</label>
-                <input type="checkbox" id="agree" name="agree" value="" style="width: 20px" />
+                <input type="checkbox" id="agree" name="agree" value="" style="width: 20px">
                 <br>
                 <br>
-                <input type="submit" value="Validate the payment" />
+                <input type="submit" id="signup" value="Sign up">
+                <br>
             </div>
         </form>
     </div>
