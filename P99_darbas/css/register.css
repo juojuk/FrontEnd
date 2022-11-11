@@ -1,0 +1,75 @@
+.navbar {
+    display: flex;
+    justify-content: end;
+    top: 0;
+    right: 0;
+    left: 0;
+    position: fixed;
+    padding: 10px;
+    background-color: black;
+}
+
+.buttons{
+    display: flex;
+    box-sizing: inherit;
+    align-items: center;
+    font-size: 24px;
+}
+
+.button-signup{
+    margin: 5px;
+    padding: 20px;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.button-login{
+    margin: 5px;
+    padding: 20px;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.column{
+    display: flex;
+    justify-items: center;
+    margin-top: 120px;
+    /*margin-left: 32%;*/
+    width: 36%; 
+    border: 1px solid grey; 
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 .5em 1em -.125em rgba(10,10,10,.1),0 0 0 1px rgba(10,10,10,.02);    
+}
+
+form {
+    display: block;
+    justify-content: center;
+
+    box-sizing: inherit;
+    align-items: center;
+
+    text-align: right;
+    padding-top: 0px;
+    padding-left: 90px;
+    padding-right: 90px;
+    padding-top: 30px;
+}
+
+h1,
+h2,
+p {
+    text-align: left;
+}
+
+input {
+    width: 200px;
+}
+
+select {
+    width: 208px;
+}

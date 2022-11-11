@@ -1,0 +1,35 @@
+.navbar {
+    display: flex;
+    justify-content: end;
+    top: 0;
+    right: 0;
+    left: 0;
+    position: fixed;
+    padding: 10px;
+    background-color: black;
+}
+
+.buttons{
+    display: flex;
+    box-sizing: inherit;
+    align-items: center;
+    font-size: 24px;
+}
+
+.button-signup{
+    margin: 5px;
+    padding: 20px;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.button-login{
+    margin: 5px;
+    padding: 20px;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+}
