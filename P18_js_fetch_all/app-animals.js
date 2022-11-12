@@ -7,23 +7,26 @@ const options = {
     }
 }
 const response = {};
+
 function loadData() {
     fetch(url, options)
-        .then((response) => response.text())
+        .then((response) => response.json())
         .then((a) => {
             console.log(a);
-            // const animalEle = document.getElementById('animal-text');
-            // let htmlAnimal = '';
-            // data.data.forEach(element => {
-            //     console.log(element);
-            //     let htmlElement = `<p>${element.name}</p>
-            //     <p>${element.type}</p>
-            //     <p>${element.legs}</p>`;
-            //     htmlAnimal += htmlElement;
-            // });
-            // animalEle.innerHTML = htmlAnimal;
+            const animalEle = document.getElementById('animal-text');
+            let htmlAnimal = '';
+
+            a.data.forEach(element => {
+                console.log(element);
+                let htmlElement = 
+                `<p>${element.name}</p>
+                <p>${element.type}</p>
+                <p>${element.legs}</p>`;
+                htmlAnimal += htmlElement;
+            });
+
+            animalEle.innerHTML = htmlAnimal;
         })
-        
 }
 
 loadData();
