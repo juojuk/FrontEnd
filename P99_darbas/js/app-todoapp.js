@@ -17,7 +17,7 @@ function loadUser() {
     const options = {
         method: 'get',
         headers: {
-            'Accept': 'application/json, text/plain, */*',
+            'Accept': 'application/json',
             'Content-Type': 'application/json',
         }
     }

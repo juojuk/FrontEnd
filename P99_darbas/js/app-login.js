@@ -18,7 +18,7 @@ function loadData() {
     const options = {
         method: 'get',
         headers: {
-            'Accept': 'application/json, text/plain, */*',
+            'Accept': 'application/json',
             'Content-Type': 'application/json',
         }
     }
@@ -34,6 +34,9 @@ function loadData() {
             }
             else {
                 console.log("Klaida");
+                //alert("Klaida")
+                let htmlElement = document.getElementsByClassName('column')[0];
+                htmlElement.innerHTML =`<div class="error">Klaida<span class="closebtn" onclick="window.location.reload()">&times;</span></div>`;
             }
         })
 

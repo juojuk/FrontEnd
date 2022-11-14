@@ -31,7 +31,7 @@ function sendData() {
     fetch(url, {
         method: 'post',
         headers: {
-            'Accept': 'application/json, text/plain, */*',
+            'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(obj)
