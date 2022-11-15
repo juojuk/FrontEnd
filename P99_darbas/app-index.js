@@ -3,5 +3,5 @@ document.body.onload = () => {
         firstName: "",
         lastName: "",
     };
-    sessionStorage.setItem("user_login",JSON.stringify(user));
+    sessionStorage.setItem("user_login",user);
 }

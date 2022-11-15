@@ -9,8 +9,6 @@ document.getElementById('login-form-submit')
         sessionStorage.setItem("user_login", JSON.stringify(user));
 
         loadData();
-        // txt_setLocalStorage.innerHTML = 'irasyta sekmingai';
-        // txt_setLocalStorage.style.color = `green`;
     });
 
 function loadData() {
@@ -26,7 +24,7 @@ function loadData() {
     fetch(url, options)
         .then((response) => response.json())
         .then((user) => {
-            const sessionStorageUser = JSON.parse(sessionStorage.getItem("user_login"));
+            const sessionStorageUser = JSON.parse(sessionStorage.user_login);
             let isUser = user.data
                 .filter(item => item.firstName === sessionStorageUser.firstName && item.lastName === sessionStorageUser.lastName)
             if (isUser.length === 1) {
@@ -34,21 +32,9 @@ function loadData() {
             }
             else {
                 console.log("Klaida");
-                //alert("Klaida")
                 let htmlElement = document.getElementsByClassName('column')[0];
-                htmlElement.innerHTML =`<div class="error">Klaida<span class="closebtn" onclick="window.location.reload()">&times;</span></div>`;
+                htmlElement.innerHTML =`<div class="error"><strong>User not exist</strong><span class="closebtn" onclick="window.location.reload()">&times;</span></div>`;
             }
         })
-
-    // user.data.forEach(element => {
-    //     console.log(element);
-    //     let htmlElement = 
-    //     `<p>${element.name}</p>
-    //     <p>${element.type}</p>
-    //     <p>${element.legs}</p>`;
-    //     htmlAnimal += htmlElement;
-    // });
-
-    // animalEle.innerHTML = htmlAnimal;
 }
 

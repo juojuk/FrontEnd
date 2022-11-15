@@ -1,23 +1,22 @@
-document.getElementById('signup-form-submit')
-    .addEventListener('click', () => {
-        const userFirstName = document.getElementById("firstname").value;
-        const userLastName = document.getElementById('lastname').value;
-        const user = {
-            firstName: userFirstName,
-            lastName: userLastName,
-        };
-        sessionStorage.setItem("user_login", JSON.stringify(user));
+const signupFormSbmBtn = document.querySelector('#signup-form-submit');
 
-        sendData();
-        // txt_setLocalStorage.innerHTML = 'irasyta sekmingai';
-        // txt_setLocalStorage.style.color = `green`;
-    });
+// signupFormSbmBtn
+//     .addEventListener('click', () => {
+//         const userFirstName = document.getElementById("firstname").value;
+//         const userLastName = document.getElementById('lastname').value;
+//         const user = {
+//             firstName: userFirstName,
+//             lastName: userLastName,
+//         };
+//         sessionStorage.setItem("user_login", JSON.stringify(user));
+
+//         sendData();
+//     });
 
 
 function sendData() {
 
     const signupForm = document.querySelector('#signup-form');
-    const signupFormSbmBtn = document.querySelector('#signup-form-submit');
     const url = 'https://testapi.io/api/juojuk/resource/Users';
 
 
@@ -42,6 +41,13 @@ function sendData() {
 
 
 signupFormSbmBtn.addEventListener('click', (e) => {
+    const userFirstName = document.getElementById("firstname").value;
+    const userLastName = document.getElementById('lastname').value;
+    const user = {
+        firstName: userFirstName,
+        lastName: userLastName,
+    };
+    sessionStorage.setItem("user_login", JSON.stringify(user));
     e.preventDefault();
     sendData();
 })
