@@ -28,7 +28,7 @@ function loadData() {
             let isUser = user.data
                 .filter(item => item.firstName === sessionStorageUser.firstName && item.lastName === sessionStorageUser.lastName)
             if (isUser.length === 1) {
-                window.open('http://127.0.0.1:5500/P99_darbas/pages/todoapp.html', '_self')
+                window.open('http://127.0.0.1:5500/P99_darbas/pages/todoadd.html', '_self')
             }
             else {
                 console.log("Klaida");

@@ -1,12 +1,11 @@
 const user = JSON.parse(sessionStorage.user_login);
+let data;
+
 
 document.body.onload = () => {
     document.getElementById("user-online").innerHTML = `<strong>${Object.values(user).join(' ')}</strong>`;
 }
 
-//let htmlElement = document.getElementsByClassName('column')[0];
-//htmlElement.innerHTML =`<div class="add"><strong>Add data</strong><span class="closebtn" onclick="window.open('http://127.0.0.1:5500/P99_darbas/pages/todoapp.html', '_self')">&times;</span></div>`;
-//window.location.
 document.getElementById('button-logout')
     .addEventListener('click', () => {
         const user = {
@@ -17,39 +16,54 @@ document.getElementById('button-logout')
 
     });
 
-// function loadData() {
-//     const url = 'https://testapi.io/api/juojuk/resource/Users';
-//     const response = {};
+function loadData() {
+    const url = 'https://testapi.io/api/juojuk/resource/Data';
+    const response = {};
 
-//     const options = {
-//         method: 'post',
-//         headers: {
-//             'Accept': 'application/json',
-//             'Content-Type': 'application/json',
-//         }
-//     }
+    const options = {
+        method: 'get',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        }
+    }
 
-//     // fetch(url, options)
-//     //     .then((response) => response.json())
-//     //     .then((a) => {
-//     //         console.log(a);
-//     //         const userEle = document.getElementById('users-text');
-//     //         let htmlUser = '';
+    fetch(url, options)
+        .then((response) => response.json())
+        .then((a) => {
+            console.log(a);
+            const dataEle = document.getElementById('data-text');
+            let htmlData = '';
 
-//     //         a.data.forEach(element => {
-//     //             console.log(element);
-//     //             let htmlElement = `<p>${element.id} ${element.firstName} ${element.lastName}</p>`;
-//     //             htmlUser += htmlElement;
-//     //         });
+            a.data.forEach(element => {
+                console.log(element);
+                htmlEle = `<input type="text" name="type" value=${element.type}>
+                <input type="text" name="content" value=${element.content}>
+                <input type="date" name="addDate" value=${element.addDate}>
+                <input type="image" onclick="updateData()" class="data-text-put" value="put">
+                <input type="image" class="data-text-del" value="del">`;
+                htmlData += htmlEle;
+            });
 
-//     //         userEle.innerHTML = htmlUser;
-//     //     })
-// }
+            dataEle.innerHTML = htmlData;
 
-// loadData();
+            const inputs = document.querySelectorAll('#type, #content, #addDate');
+            inputs.forEach(input => { input.value = '' })
+        })
+        .then(()=> {
+            const outputForm = document.getElementById('data-text');
+            data = new FormData(outputForm);
+            return data;
+        })
+}
+
+loadData();
 
 const inputForm = document.querySelector('#input-form');
-const inputFormSbmBtn = document.querySelector('#input-form-submit');
+const inputFormSbmBtn = document.querySelector('#input-form-sub');
+//const outputForm = document.querySelector('#data-text');
+
+
 
 function sendData() {
     let data = new FormData(inputForm);
@@ -78,9 +92,46 @@ function sendData() {
 
 
 
+function updateData() {
+    //let data = new FormData(outputForm);
+    let obj = {};
+
+    // #1 iteracija -> obj {name: 'asd'}
+    // #2 iteracija -> obj {type: 'asd'}
+    data.forEach((value, key) => {
+        // console.log(`${key}(Key): ${value}(Value)`);
+        obj[key] = value
+    });
+
+    console.log(obj);
+
+
+    const url = 'https://testapi.io/api/juojuk/resource/Data/' + obj.id;
+
+    fetch(url, {
+        method: 'put',
+        headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json'
+        },
+        // Naudojame JSON.stringify, nes objekte neturim .json() metodo
+        body: JSON.stringify(obj)
+    })
+        .then(obj => {
+            const res = obj.json()
+            console.log(res);
+            return res;
+        })
+        .catch((klaida) => console.log(klaida));
+}
+
+
 inputFormSbmBtn.addEventListener('click', (e) => {
     e.preventDefault();
     sendData();
+    loadData();
+    //outputForm = document.querySelector('#data-text');
+
 })
 
 

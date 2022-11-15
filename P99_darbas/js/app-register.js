@@ -35,7 +35,7 @@ function sendData() {
         },
         body: JSON.stringify(obj)
     })
-        .then(obj => window.open('http://127.0.0.1:5500/P99_darbas/pages/todoapp.html', '_self'))
+        .then(obj => window.open('http://127.0.0.1:5500/P99_darbas/pages/todoadd.html', '_self'))
         .catch((klaida) => console.log(klaida));
 }
 

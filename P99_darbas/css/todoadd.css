@@ -31,7 +31,7 @@
 }
 
 .column{
-    display: inline-block;
+    display: flex;
     margin-top: 120px;
     margin-left: 22%;
     width: 56%; 
@@ -55,7 +55,7 @@
     justify-content: center;
 }
 
-.closebtn {
+#button-close {
     margin-left: 15px;
     color: white;
     font-weight: bold;
@@ -66,48 +66,6 @@
     transition: 0.3s;
   }
   
-  .closebtn:hover {
+  #button-close:hover {
     color: black;
   }
-
-h1,h2{
-    text-align: center;
-}
-
-form {
-    display: block;
-    box-sizing: inherit;
-    text-align: left;
-    padding-left: 50px;
-    padding-bottom: 30px;
-}
-
-input {
-    height: 20px;
-    width: 200px;
-}
-
-#input-form-sub{
-    height: 20px;
-    width: 20px;
-    text-align: center;
-}
-
-#data-text {
-    display: block;
-    box-sizing: inherit;
-    text-align: left;
-    padding-bottom: 30px;
-}
-
-.data-text-put{
-    height: 20px;
-    width: 20px;
-    text-align: left;
-}
-
-.data-text-del{
-    height: 20px;
-    width: 20px;
-    text-align: left;
-}
