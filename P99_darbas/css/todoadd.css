@@ -44,10 +44,13 @@
 
 .add{
     display: flex;
+    margin: 120px;
     box-sizing: inherit;
     align-items: center;
+    padding: 20px;
     width: 100%;
     background-color: rgba(62, 238, 18, 0.7) ;
+    text-align: center;
     font-size: 24px;
     color: white;
     border-radius: 10px;

@@ -1,10 +1,6 @@
 const user = JSON.parse(sessionStorage.user_login);
-let data;
+document.getElementById("user-online").innerHTML = `<strong>${Object.values(user).join(' ')}</strong>`;
 
-
-document.body.onload = () => {
-    document.getElementById("user-online").innerHTML = `<strong>${Object.values(user).join(' ')}</strong>`;
-}
 
 document.getElementById('button-logout')
     .addEventListener('click', () => {
@@ -16,15 +12,15 @@ document.getElementById('button-logout')
 
     });
 
-function loadData() {
+function getData() {
     const url = 'https://testapi.io/api/juojuk/resource/Data';
     const response = {};
 
     const options = {
         method: 'get',
         headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
+            'Accept': 'application/json */*',
+            'Content-Type': 'application/json */*'
         }
     }
 
@@ -32,40 +28,38 @@ function loadData() {
         .then((response) => response.json())
         .then((a) => {
             console.log(a);
-            const dataEle = document.getElementById('data-text');
             let htmlData = '';
 
-            a.data.forEach(element => {
+            const filteredData = a.data.filter(element => element.userid===Object.values(user).join(''))
+
+            filteredData.forEach(element => {
                 console.log(element);
-                htmlEle = `<input type="text" name="type" value=${element.type}>
-                <input type="text" name="content" value=${element.content}>
-                <input type="date" name="addDate" value=${element.addDate}>
-                <input type="image" onclick="updateData()" class="data-text-put" value="put">
-                <input type="image" class="data-text-del" value="del">`;
+                htmlEle = `<form id="output-form${element.id}">
+                <input type="text" name="type" value="${element.type}">
+                <input type="text" name="content" value="${element.content}">
+                <input type="date" name="addDate" value="${element.addDate}">
+                <input type="image" onclick="putData()" id="${element.id}"class="output-form-put" value="put">
+                <input type="image" id="${element.id}" class="output-form-del" value="del">
+                </form>`;
                 htmlData += htmlEle;
             });
+            document.getElementById("output-form").outerHTML = htmlData;
 
-            dataEle.innerHTML = htmlData;
-
-            const inputs = document.querySelectorAll('#type, #content, #addDate');
-            inputs.forEach(input => { input.value = '' })
-        })
-        .then(()=> {
-            const outputForm = document.getElementById('data-text');
-            data = new FormData(outputForm);
-            return data;
+            // const inputs = document.querySelectorAll('#type, #content, #addDate');
+            // inputs.forEach(input => { input.value = '' })
         })
 }
 
-loadData();
-
 const inputForm = document.querySelector('#input-form');
 const inputFormSbmBtn = document.querySelector('#input-form-sub');
-//const outputForm = document.querySelector('#data-text');
+//const putFormSbmBtn = document.getElementById('put');
+
+
+//const outputForm = document.querySelector('#output-form');
 
 
 
-function sendData() {
+function postData() {
     let data = new FormData(inputForm);
     let obj = {};
 
@@ -91,17 +85,22 @@ function sendData() {
 }
 
 
+function putData() {
+    // const outputForm = document.getElementById('output-form'+id);
 
-function updateData() {
-    //let data = new FormData(outputForm);
+    // let data = new FormData(outputForm);
     let obj = {};
+    //let obj = {id: 7,firstName: "Septynetas",lastName: "",email: "septyni@septyni.lt"};
+    obj["id"] = "20";
+    obj["type"] = "Septynetas";
+    obj["content"] = "Septintokas";
+    obj["addDate"] = "2022-11-30";
+    obj["userid"] = "DevynetasDevintokas";
 
-    // #1 iteracija -> obj {name: 'asd'}
-    // #2 iteracija -> obj {type: 'asd'}
-    data.forEach((value, key) => {
-        // console.log(`${key}(Key): ${value}(Value)`);
-        obj[key] = value
-    });
+    // data.forEach((value, key) => {
+    //     // console.log(`${key}(Key): ${value}(Value)`);
+    //     obj[key] = value
+    // });
 
     console.log(obj);
 
@@ -111,27 +110,86 @@ function updateData() {
     fetch(url, {
         method: 'put',
         headers: {
-            'Accept': 'application/json, text/plain, */*',
+            'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        // Naudojame JSON.stringify, nes objekte neturim .json() metodo
         body: JSON.stringify(obj)
     })
-        .then(obj => {
-            const res = obj.json()
-            console.log(res);
-            return res;
-        })
-        .catch((klaida) => console.log(klaida));
-}
+    .then(obj => {
+        const res = obj.json();
+        console.log(res);
+        return res;
+    })
+    .catch((klaida) => console.log(klaida));}
 
+getData();
+
+
+// putFormSbmBtn.addEventListener('click', (e) => {
+//     //e.preventDefault();
+//     putData();
+//     //getData();
+
+// })
 
 inputFormSbmBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    sendData();
-    loadData();
-    //outputForm = document.querySelector('#data-text');
+    putData();
+    //getData();
 
 })
 
+// const outputForm = document.getElementById('output-form'+id);
+// const animalFormSbmBtn = document.querySelector('#animal-form-submit');
 
+// function sendData() {
+//     let data = new FormData(animalForm);
+//     let obj = {};
+
+//     // #1 iteracija -> obj {name: 'asd'}
+//     // #2 iteracija -> obj {type: 'asd'}
+//     data.forEach((value, key) => {
+//         // console.log(`${key}(Key): ${value}(Value)`);
+//         obj[key] = value
+//     });
+
+//     const url = 'https://testapi.io/api/juojuk/resource/Animals/' + obj.id;
+
+//     const urlFetchAnimal = 'https://testapi.io/api/juojuk/resource/Animals/' + obj.id;
+//     const optionsFetchAnimal = {
+//         method: 'get',
+//         headers: {
+//             'Accept': 'application/json',
+//             'Content-Type': 'application/json'
+//         }
+//     }
+
+//     fetch(urlFetchAnimal, optionsFetchAnimal)
+//     .then((response) => response.json())
+//     .then((a) => {
+//         console.log(`Animal exists: ${a}`);
+//         return fetch(url, {
+//             method: 'delete',
+//             headers: {
+//                 'Accept': 'application/json, text/plain, */*',
+//                 'Content-Type': 'application/json'
+//             }
+//         })
+//     })
+//     .then(obj => { // Now we are working with our Delete fetch
+//         const res = obj;// .json()
+//         console.log(res);
+//         return res;
+//     })
+//     .catch((error) => {
+//         console.log(`Request failed with error: ${error}`);
+//     })
+    
+    
+    
+// }
+
+// animalFormSbmBtn.addEventListener('click', (e) => {
+//     e.preventDefault(); // Breaks manual refresh after submit
+//     sendData();
+// })

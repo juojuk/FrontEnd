@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="../css/todoapp.css">
     <title>Todo App</title>
 </head>
+
 <body>
     <nav class="navbar">
         <div class="buttons">
@@ -25,13 +27,19 @@
             <input type="text" id="type" name="type" placeholder="Type*" value="">
             <input type="text" id="content" name="content" placeholder="Content*" value="">
             <input type="date" id="addDate" name="addDate" value="">
-            <input type="image" id="input-form-sub" value="sub">
+            <input type="image" id="input-form-sub" value="submit">
             <br>
         </form>
-        <p>Loaded data</p>
-        <form id="data-text">
+        <p style="padding-left: 50px;">Loaded data</p>
+        <form id="output-form">
+            <input type="text" name="type" value="">
+            <input type="text" name="content" value="">
+            <input type="date" name="addDate" value="">
+            <input type="image" class="output-form-put" value="put">
+            <input type="image" class="output-form-del" value="del">
         </form>
     </div>
     <script src="../js/app-todoapp.js"></script>
 </body>
+
 </html>

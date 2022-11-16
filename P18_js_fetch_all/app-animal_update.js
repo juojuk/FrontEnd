@@ -8,11 +8,12 @@ function sendData() {
     // #1 iteracija -> obj {name: 'asd'}
     // #2 iteracija -> obj {type: 'asd'}
     data.forEach((value, key) => {
-        // console.log(`${key}(Key): ${value}(Value)`);
-        obj[key] = value
+         //console.log(`${key}: ${value}`);
+        obj[key] = value;
     });
 
     const url = 'https://testapi.io/api/juojuk/resource/Animals/' + obj.id;
+    console.log(obj);
 
     fetch(url, {
         method: 'put',
@@ -24,7 +25,7 @@ function sendData() {
         body: JSON.stringify(obj)
     })
     .then(obj => {
-        const res = obj.json()
+        const res = obj.json();
         console.log(res);
         return res;
     })
