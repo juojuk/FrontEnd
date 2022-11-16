@@ -1,5 +1,11 @@
+const inputForm = document.querySelector('#input-form');
+const inputFormSbmBtn = document.querySelector('#input-form-sub');
+
 const user = JSON.parse(sessionStorage.user_login);
-document.getElementById("user-online").innerHTML = `<strong>${Object.values(user).join(' ')}</strong>`;
+document.body.onload = () => {
+    document.getElementById("user-online").innerHTML = `<strong>${Object.values(user).join(' ')}</strong>`;
+    getData();
+}
 
 
 document.getElementById('button-logout')
@@ -19,8 +25,8 @@ function getData() {
     const options = {
         method: 'get',
         headers: {
-            'Accept': 'application/json */*',
-            'Content-Type': 'application/json */*'
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
         }
     }
 
@@ -30,7 +36,7 @@ function getData() {
             console.log(a);
             let htmlData = '';
 
-            const filteredData = a.data.filter(element => element.userid===Object.values(user).join(''))
+            const filteredData = a.data.filter(element => element.userid === Object.values(user).join(''))
 
             filteredData.forEach(element => {
                 console.log(element);
@@ -43,19 +49,12 @@ function getData() {
                 </form>`;
                 htmlData += htmlEle;
             });
-            document.getElementById("output-form").outerHTML = htmlData;
+            document.getElementById("output-form").innerHTML = htmlData;
 
             const inputs = document.querySelectorAll('#type, #content, #addDate');
             inputs.forEach(input => { input.value = '' })
         })
 }
-
-const inputForm = document.querySelector('#input-form');
-const inputFormSbmBtn = document.querySelector('#input-form-sub');
-//const putFormSbmBtn = document.getElementById('put');
-
-
-//const outputForm = document.querySelector('#output-form');
 
 
 
@@ -68,9 +67,6 @@ function postData() {
     data.forEach((value, key) => obj[key] = value);
     obj['userid'] = Object.values(user).join('');
 
-    console.log(JSON.stringify(obj));
-
-
     fetch('https://testapi.io/api/juojuk/resource/Data', {
         method: 'post',
         headers: {
@@ -82,12 +78,14 @@ function postData() {
 
         .then(obj => console.log(obj.json()))
         .catch((klaida) => console.log(klaida));
+
+    getData();
 }
 
 
 function putData(id) {
 
-    const outputForm = document.getElementById('output-form'+id);
+    const outputForm = document.getElementById('output-form' + id);
 
     let data = new FormData(outputForm);
 
@@ -112,18 +110,20 @@ function putData(id) {
         },
         body: JSON.stringify(obj)
     })
-    .then(obj => {
-        const res = obj.json();
-        console.log(res);
-        return res;
-    })
-    .catch((klaida) => console.log(klaida));
+        .then(obj => {
+            const res = obj.json();
+            console.log(res);
+            return res;
+        })
+        .catch((klaida) => console.log(klaida));
+
+    getData();
 }
 
 
 function delData(id) {
 
-    const outputForm = document.getElementById('output-form'+id);
+    const outputForm = document.getElementById('output-form' + id);
 
     let data = new FormData(outputForm);
 
@@ -147,20 +147,19 @@ function delData(id) {
             'Content-Type': 'application/json'
         },
     })
-    .then(obj => {
-        const res = obj.json();
-        console.log(res);
-        return res;
-    })
-    .catch((klaida) => console.log(klaida));
-}
+        .then(obj => {
+            const res = obj.json();
+            console.log(res);
+            return res;
+        })
+        .catch((klaida) => console.log(klaida));
 
-getData();
+    getData();
+
+}
 
 
 inputFormSbmBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    putData();
-    getData();
-
+    postData();
 })
