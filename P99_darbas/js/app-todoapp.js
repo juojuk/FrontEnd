@@ -2,10 +2,12 @@ const inputForm = document.querySelector('#input-form');
 const inputFormSbmBtn = document.querySelector('#input-form-sub');
 
 const user = JSON.parse(sessionStorage.user_login);
+
 document.body.onload = () => {
-    document.getElementById("user-online").innerHTML = `<strong>${Object.values(user).join(' ')}</strong>`;
-    getData();
+    document.getElementById("user-online").innerHTML = `<strong>${Object.values(user).join(' ')}</strong>`,
+    getData()
 }
+
 
 
 document.getElementById('button-logout')
@@ -162,4 +164,5 @@ function delData(id) {
 inputFormSbmBtn.addEventListener('click', (e) => {
     e.preventDefault();
     postData();
+    getData();
 })
