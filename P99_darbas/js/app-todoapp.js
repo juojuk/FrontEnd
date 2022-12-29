@@ -49,7 +49,7 @@ function getData() {
 
                 outputFormSet.append(outputForm);
                 outputForm.setAttribute("id", "output-form" + element.id);
-                outputForm.setAttribute("class", "output-form");
+                //outputForm.setAttribute("class", "output-form");
                 inputType.setAttribute("type", "text");
                 inputType.setAttribute("name", "type");
                 inputType.setAttribute("value", element.type);
@@ -58,7 +58,7 @@ function getData() {
                 inputContent.setAttribute("name", "content");
                 inputContent.setAttribute("value", element.content);
                 outputForm.append(inputContent);
-                inputAddDate.setAttribute("type", "text");
+                inputAddDate.setAttribute("type", "date");
                 inputAddDate.setAttribute("name", "addDate");
                 inputAddDate.setAttribute("value", element.addDate);
                 outputForm.append(inputAddDate);

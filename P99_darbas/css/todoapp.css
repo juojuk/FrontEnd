@@ -76,15 +76,20 @@ h1,h2{
 }
 
 form {
-    display: block;
+    display:block;
+    text-align:left;
+    width: 500px;
     box-sizing: inherit;
     padding-left: 50px;
+    padding-right: 50px;
+
 }
 
 input {
-
+    text-indent: 1px;
     height: 20px;
     max-width: 200px;
+    margin: 0px;
 }
 
 #input-form-sub{
@@ -93,20 +98,20 @@ input {
     text-align: center;
 }
 
-#output-form {
+/* #output-form {
     display: block;
     box-sizing: inherit;
     text-align: left;
-}
+} */
 
 .output-form-put{
     height: 20px;
     width: 20px;
-    text-align: left;
+    text-align: center;
 }
 
 .output-form-del{
     height: 20px;
     width: 20px;
-    text-align: left;
+    text-align: center;
 }
